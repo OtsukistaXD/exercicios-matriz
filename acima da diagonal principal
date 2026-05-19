@@ -1,0 +1,46 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace matriz
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            float a = 0;
+            float[,] matriz = new float[12, 12];
+            string s = Console.ReadLine();
+            float soma = 0;
+            for(int lin = 0; lin < 12; lin++)
+            {
+                for(int col = 0; col < 12; col++)
+                {
+                a = float.Parse(Console.ReadLine());
+                    matriz[lin, col] = a;
+                }
+            }
+            for (int lin = 0; lin < 12; lin++)
+            {
+                for (int col = 0; col < 12; col++)
+                {
+                    if (col > lin)
+                    {
+                        soma += matriz[lin, col];
+                    } 
+                }
+            }
+            if (s == "S")
+            {
+                Console.WriteLine(string.Format("{0:F1}", soma));
+            }
+            else if(s == "M")
+            {
+                Console.WriteLine(string.Format("{0:F1}", soma/66));
+            }
+           
+        }
+    }
+}
